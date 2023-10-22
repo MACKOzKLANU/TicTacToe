@@ -1,5 +1,4 @@
 # Tic Tac Toe Game
-<img src="screenshot.PNG">
 
 
 ## Overview
@@ -19,6 +18,9 @@ This is a simple implementation of the classic Tic Tac Toe game, also known as "
 1. Clone this repository to your local machine.
 
    ```sh
-   git clone https://github.com/your-username/tic-tac-toe-game.git
-  
+     git clone https://github.com/your-username/tic-tac-toe-game.git
+
+## Demo
+<img src="screenshot.PNG">
+
 
