@@ -20,7 +20,7 @@ This is a simple implementation of the classic Tic Tac Toe game, also known as "
    ```sh
      git clone https://github.com/your-username/tic-tac-toe-game.git
 
-## Demo
+## Screenshot
 <img src="screenshot.PNG">
 
 
