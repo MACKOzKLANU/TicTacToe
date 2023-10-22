@@ -31,7 +31,7 @@ function checkWinner() {
         const [a, b, c] = combo;
         if (gameBoard[a - 1] !== "-" && gameBoard[a - 1] === gameBoard[b - 1] && gameBoard[b - 1] === gameBoard[c - 1]) {
             gameActive = false;
-            result.innerHTML = gameBoard[a - 1] + " wins!";
+            result.innerHTML = "<h2>"+ gameBoard[a - 1] + " wins!"+ "</h2>";
             return;
         }
     }
@@ -51,7 +51,8 @@ function makeMove(button, index) {
         setxy();
     }
 }
-
+const resetButton = document.getElementById("reset");
+resetButton.addEventListener("click", reset);
 function reset(){
     location.reload()
 }
