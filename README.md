@@ -1,4 +1,6 @@
 # Tic Tac Toe Game
+<img src="screenshot.PNG">
+
 
 ## Overview
 
@@ -6,11 +8,11 @@ This is a simple implementation of the classic Tic Tac Toe game, also known as "
 
 ### Features
 
-- A modern and clean user interface.
-- Interactive gameplay.
-- Player turn indicator.
-- Winning and draw conditions.
-- Easy-to-understand code structure.
+- 🎨 Modern and clean user interface.
+- 🤝 Interactive gameplay for two players.
+- 🔄 Player turn indicator to keep the action flowing.
+- 🏆 Winning and draw conditions for a satisfying game conclusion.
+- 🧩 Easy-to-understand code structure for developers.
 
 ## Getting Started
 
