@@ -1,66 +1,57 @@
-console.log("hello")
-let player = document.getElementById("player")
+console.log("hello");
+
+let player = document.getElementById("player");
 player.addEventListener("click", setxy);
-var xoro = "O"
-function setxy(){
-    if(xoro == "X"){
-        player.innerHTML = "O"
-        xoro = "O"
+let xoro = "O";
+let gameActive = true;
 
+function setxy() {
+    if (gameActive) {
+        xoro = (xoro === "X") ? "O" : "X";
+        player.innerHTML = xoro;
     }
-    else{
-        player.innerHTML = "X"
-        xoro = "X"
-    }
-
-
 }
-let b1 = document.getElementById("1")
-let b2 = document.getElementById("2")
-let b3 = document.getElementById("3")
-let b4 = document.getElementById("4")
-let b5 = document.getElementById("5")
-let b6 = document.getElementById("6")
-let b7 = document.getElementById("7")
-let b8 = document.getElementById("8")
-let b9 = document.getElementById("9")
 
-b1.addEventListener("click", change);
-// b2.addEventListener("click", change(b2));
-// b3.addEventListener("click", change(b3));
-// b4.addEventListener("click", change(b4));
-// b5.addEventListener("click", change(b5));
-// b6.addEventListener("click", change(b6));
-// b7.addEventListener("click", change(b7));
-// b8.addEventListener("click", change(b8));
-// b9.addEventListener("click", change(b9));
+const winningCombos = [
+    [1, 2, 3], [4, 5, 6], [7, 8, 9],  
+    [1, 4, 7], [2, 5, 8], [3, 6, 9],  
+    [1, 5, 9], [3, 5, 7] 
+];
 
+const gameBoard = Array(9).fill("-");
+const result = document.querySelector(".result");
+const buttons = document.querySelectorAll('.game-button');
 
-// function change(num) {
-//   if(num.value == "-"){
-//     num.value = xoro
-//     num.innerHTML = xoro
-//     if(xoro == "X"){
-//         xoro = "O"
-//     }
-//     else if(xoro == "O"){
-//         xoro = "X"
-//     }
-//   }
-// }
-function change() {
-    if(b1.value == "-"){
-      b1.value = xoro
-      b1.innerHTML = xoro
-      if(xoro == "X"){
-          xoro = "O"
-          player.innerHTML = "O"
-      }
-      else if(xoro == "O"){
-          xoro = "X"
-          player.innerHTML = "X"
+buttons.forEach((button, index) => {
+    button.addEventListener("click", () => makeMove(button, index));
+});
 
-      }
+function checkWinner() {
+    for (const combo of winningCombos) {
+        const [a, b, c] = combo;
+        if (gameBoard[a - 1] !== "-" && gameBoard[a - 1] === gameBoard[b - 1] && gameBoard[b - 1] === gameBoard[c - 1]) {
+            gameActive = false;
+            result.innerHTML = gameBoard[a - 1] + " wins!";
+            return;
+        }
     }
-  }
-  
+
+    if (!gameBoard.includes("-")) {
+        gameActive = false;
+        result.innerHTML = "It's a draw!";
+    }
+}
+
+function makeMove(button, index) {
+    if (gameActive && gameBoard[index] === "-") {
+        gameBoard[index] = xoro;
+        button.value = xoro;
+        button.innerHTML = xoro;
+        checkWinner();
+        setxy();
+    }
+}
+
+function reset(){
+    location.reload()
+}

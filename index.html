@@ -3,38 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Choose O or X</h1>
-            <h2>current player:</h2>
-            <button id="player">O</button><br><br>
+            <h1>can choose O or X by clicking at: </h1>
 
-
+            <button id="player">O</button> <br><br>
         </div>
         <div class="board">
+            <table>
+                <tr>
+                    <td><button class="game-button" id="1" value="-">-</button></td>
+                    <td><button class="game-button" id="2" value="-">-</button></td>
+                    <td><button class="game-button" id="3" value="-">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="game-button" id="4" value="-">-</button></td>
+                    <td><button class="game-button" id="5" value="-">-</button></td>
+                    <td><button class="game-button" id="6" value="-">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="game-button" id="7" value="-">-</button></td>
+                    <td><button class="game-button" id="8" value="-">-</button></td>
+                    <td><button class="game-button" id="9" value="-">-</button></td>
+                </tr>
 
-            <button onclick="change()" id="1" value="-">-</button>
-            <button id="2 "value="-">-</button>
-            <button id="3 "value="-">-</button><br>
-            <button id="4 "value="-">-</button>
-            <button id="5 "value="-">-</button>
-            <button id="6 "value="-">-</button><br>
-            <button id="7 "value="-">-</button>
-            <button id="8 "value="-">-</button>
-            <button id="9 "value="-">-</button>
-            
-
-
+            </table>
         </div>
         <div class="result">
             <h2>Result</h2>
-
+            
         </div>
+        <button onclick="reset()" id="restart">Do you want to <b>restart</b> game? </button>
     </div>
 </body>
 </html>
